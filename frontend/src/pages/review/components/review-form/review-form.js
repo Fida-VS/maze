@@ -36,7 +36,7 @@ const ReviewFormContainer = ({
 		dispatch(
 			saveReviewAsync(id, {
 				userId,
-				imageUrl: imageUrlValue ? imageUrlValue : AVATARS.SMILE,
+				imageUrl: imageUrlValue ? imageUrlValue : AVATARS.SMILING,
 				title: titleValue,
 				content: newContent,
 			}),
