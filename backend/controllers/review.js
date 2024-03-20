@@ -17,6 +17,8 @@ async function addReview(review){
 async function editReview(id, review) {
     const newReview = await Review.findByIdAndUpdate(id, review, { returnDocument: 'after' })
 
+	await newReview.populate('author');
+
     return newReview;
 }
 

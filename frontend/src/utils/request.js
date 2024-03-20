@@ -7,3 +7,6 @@ export function request(url, method, data){
 		body: data ? JSON.stringify(data) : undefined,
 	}).then(res => res.json())
 }
+
+
+

@@ -54,7 +54,6 @@ const { reviews, lastPage } = await getReviews(
   req.query.limit,
   req.query.page,
 )
-
 res.send({ data: {lastPage, reviews: reviews.map(mapReview)} })
 })
 
@@ -76,7 +75,7 @@ app.post('/reviews', hasRole([ROLES.ADMIN, ROLES.USER]), async (req, res) => {
         author: req.user.id
   });
 
-  res.send({data: mapReview(newReview)}) 
+  res.send({data: mapReview(newReview)})
 })
 
 
