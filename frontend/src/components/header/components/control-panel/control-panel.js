@@ -40,13 +40,12 @@ const ControlPanelContainer = ({ className }) => {
 	return (
 		<div className={className}>
 			<RightAligned>
-				<Pentagon>
+				<Pentagon onClick={() => navigate(-1)}>
 					<Icon
 						id="fa-backward"
 						size="19px"
 						transform="rotate(-90deg)"
 						margin="6px 0 0 0"
-						onClick={() => navigate(-1)}
 					/>
 				</Pentagon>
 				{!isGuest && (<Pentagon>
@@ -57,8 +56,9 @@ const ControlPanelContainer = ({ className }) => {
 							margin="6px 0 0 0"
 							transform="rotate(-90deg)"
 						/>
-					</Link>
-				</Pentagon>)}
+	</Link>
+				</Pentagon>
+				)}
 				{isGuest && (<Pentagon>
 					<Link to="/">
 						<Icon

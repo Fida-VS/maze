@@ -1,9 +1,12 @@
 import { Maze } from './components/maze/maze';
+import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getMaze } from './utils/get-maze';
 import { getUnits, getCharacter } from './utils';
-import { SIZE_OF_SIDE } from '../../constants';
+import { ROLE, SIZE_OF_SIDE } from '../../constants';
 import styled from 'styled-components';
+import { selectUserRole } from '../../selectors';
 
 
 const MazeBox = styled.div`
@@ -63,7 +66,6 @@ const MazePageContainer = ({ className }) => {
 
 					setTimeout(() => setIsRebooted(!isRebooted), 500);
 						setLevel(level+1);
-						console.log(level);
 					}
 
 					if (characterLayer[startPointY - 1][startPointX] === 0) {
@@ -84,7 +86,6 @@ const MazePageContainer = ({ className }) => {
 
 						setTimeout(() => setIsRebooted(!isRebooted), 500);
 						setLevel(level+1);
-						console.log(level);
 					}
 
 					if (characterLayer[startPointY + 1][startPointX] === 0) {
@@ -105,7 +106,6 @@ const MazePageContainer = ({ className }) => {
 
 						setTimeout(() => setIsRebooted(!isRebooted), 500);
 						setLevel(level+1);
-						console.log(level);
 					}
 
 					if (characterLayer[startPointY][startPointX - 1] === 0) {
@@ -126,7 +126,6 @@ const MazePageContainer = ({ className }) => {
 
 						setTimeout(() => setIsRebooted(!isRebooted), 500);
 						setLevel(level+1);
-						console.log(level);
 					}
 
 					if (characterLayer[startPointY][startPointX + 1] === 0) {
@@ -162,6 +161,12 @@ const MazePageContainer = ({ className }) => {
 
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [isRebooted]);
+
+	const roleId = useSelector(selectUserRole);
+
+	if(roleId === ROLE.GUEST){
+		return <Navigate to="/" />
+	}
 
 	return (
 		<div className={className}>

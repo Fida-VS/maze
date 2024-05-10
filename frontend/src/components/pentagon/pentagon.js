@@ -1,11 +1,11 @@
 
 import styled from 'styled-components';
 
-const PentagonContainer = ({className, children}) => {
+const PentagonContainer = ({className, children, ...props}) => {
 
 
 return (
-	<div className={className}>
+	<div className={className} {...props}>
 		<div className="pentagon__outer">
 			<div className="pentagon__outer__inner"></div>
 		</div>
@@ -17,6 +17,7 @@ return (
 };
 
 export const Pentagon = styled(PentagonContainer)`
+
 	height: 30px;
 	display: inline-block;
 	max-width: calc(100% - 15px);

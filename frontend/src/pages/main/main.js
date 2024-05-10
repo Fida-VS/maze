@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Button } from '../../components';
 
 const MainContainer = ({ className }) => {
 
 	return (
 		<div className={className}>
-			<button>
-			<Link to="/login">Вход</Link>
-			  </button>
-			  <button>
-			<Link to="/register">Регистрация</Link>
-			  </button>
-              <button>
-			<Link to="/description">Описание</Link>
-			  </button>
+
+			<Link to="/login"><Button>Вход</Button></Link>
+
+			<Link to="/register"><Button>Регистрация</Button></Link>
+
+			<Link to="/description"><Button>Описание</Button></Link>
+
 		</div>
 	);
 };
@@ -29,7 +28,7 @@ export const Main = styled(MainContainer)`
 
 
 	& button {
-		width: 35%;
+		width: 100%;
 		height: 60px;
 		font-weight: bold;
 		font-size: 18px;
@@ -37,6 +36,7 @@ export const Main = styled(MainContainer)`
 	}
 
 	& a {
+		width: 35%;
 		text-decoration: none;
 		color: #000;
 	}

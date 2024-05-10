@@ -7,7 +7,7 @@ import { SpecialPanel } from '../special-panel/special-panel';
 import { sanitizeContent } from './utils';
 import { saveReviewAsync } from '../../../../actions';
 import { selectUserId } from '../../../../selectors';
-import { AVATARS } from '../../../../constants';
+import { AVATARS, PROP_TYPE } from '../../../../constants';
 
 
 const ReviewFormContainer = ({
@@ -154,3 +154,6 @@ export const ReviewForm = styled(ReviewFormContainer)`
 
 
 
+ReviewForm.propTypes = {
+	review: PROP_TYPE.REVIEW.isRequired,
+};

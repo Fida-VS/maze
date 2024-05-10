@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { H2, Icon } from '../../../../components';
 import { SpecialPanel } from '../special-panel/special-panel';
 import { useNavigate } from 'react-router-dom';
+import { PROP_TYPE } from '../../../../constants';
 
 const ReviewContentContainer = ({
 	className,
@@ -53,3 +54,8 @@ padding: 50px;
 		white-space: pre-line;
 	}
 `;
+
+
+ReviewContent.propTypes = {
+	review: PROP_TYPE.REVIEW.isRequired,
+};

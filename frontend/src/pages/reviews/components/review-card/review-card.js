@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../../../components';
 import styled from 'styled-components';
@@ -92,3 +93,11 @@ export const ReviewCard = styled(ReviewCardContainer)`
 		padding: 5px 10px 10px 0;
 	}
 `;
+
+
+ReviewCard.propTypes = {
+	id: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	imageUrl: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+};
